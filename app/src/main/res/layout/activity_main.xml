@@ -1,61 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MainActivity">
-
+    <!--
     <include
-        layout="@layout/toolbar_layout"/>
+        android:id="@+id/include"
+        layout="@layout/toolbar_layout"
+        app:layout_constraintBottom_toTopOf="@+id/tempbtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    -->
 
     <Button
         android:id="@+id/tempbtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="tempbtn"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintBottom_toTopOf="@+id/DifficultyFragButton"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <Button
+        android:id="@+id/DifficultyFragButton"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:onClick="changeFragment"
+        android:text="Difficulty"
+        app:layout_constraintBottom_toTopOf="@+id/TuesdayFragButton"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/MondayFragButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
         android:onClick="changeFragment"
-        android:text="Monday" />
+        android:text="Monday"
+        app:layout_constraintBottom_toTopOf="@+id/WednesdayFragButton"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/TuesdayFragButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
         android:onClick="changeFragment"
-        android:text="Tuesday" />
+        android:text="Tuesday"
+        app:layout_constraintBottom_toTopOf="@+id/ThursdayFragButton"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/WednesdayFragButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
         android:onClick="changeFragment"
-        android:text="Wednesday" />
+        android:text="Wednesday"
+        app:layout_constraintBottom_toTopOf="@+id/FridayFragButton"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/ThursdayFragButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
         android:onClick="changeFragment"
-        android:text="Thursday" />
+        android:text="Thursday"
+        app:layout_constraintBottom_toTopOf="@+id/fragment_place"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/FridayFragButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
         android:onClick="changeFragment"
-        android:text="Friday" />
+        android:text="Friday"
+        app:layout_constraintBottom_toTopOf="@+id/fragment_place"
+        app:layout_constraintEnd_toEndOf="parent" />
 
-    <fragment
-        android:name="com.example.android_development.MondayFragment"
+    <FrameLayout
         android:id="@+id/fragment_place"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:name="com.example.android_development.MondayFragment"
+        android:layout_width="409dp"
+        android:layout_height="407dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
-</LinearLayout>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

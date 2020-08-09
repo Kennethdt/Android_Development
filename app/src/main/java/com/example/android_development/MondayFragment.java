@@ -4,61 +4,42 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link MondayFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+
 public class MondayFragment extends Fragment {
-
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public MondayFragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment Fragment1.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static MondayFragment newInstance(String param1, String param2) {
-        MondayFragment fragment = new MondayFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
+    private TextView dlrep;
+    private TextView lpdrep;
+    private TextView drrep;
+    private TextView hsmrrep;
+    private TextView oacrrep;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_monday, container, false);
+        View v = inflater.inflate(R.layout.fragment_monday, container, false);
+
+        dlrep = v.findViewById(R.id.dlrep);
+        lpdrep = v.findViewById(R.id.lpdrep);
+        drrep = v.findViewById(R.id.drrep);
+        hsmrrep = v.findViewById(R.id.hsmrrep);
+        oacrrep = v.findViewById(R.id.oacrrep);
+
+        return v;
+    }
+
+    public void updateTextView(CharSequence NOR){
+        Log.i("done", "finished my " + NOR);
+        Log.i("exercise", dlrep.getText().toString());
+        dlrep.setText(NOR);
+        Log.i("exercise", dlrep.getText().toString());
+        lpdrep.setText(NOR.toString());
+        drrep.setText(NOR.toString());
+        hsmrrep.setText(NOR.toString());
+        oacrrep.setText(NOR.toString());
     }
 }

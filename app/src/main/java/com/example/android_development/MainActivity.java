@@ -9,15 +9,24 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
+import java.util.Calendar;
 
-public class MainActivity extends AppCompatActivity {
+
+public class MainActivity extends AppCompatActivity implements Difficulty.DifficultyFragmentListener {
     Button tempbtn;
+    private Difficulty difficulty;
+    private MondayFragment mondayFragment;
+    private TuesdayFragment tuesdayFragment;
+    private WednesdayFragment wednesdayFragment;
+    private ThursdayFragment thursdayFragment;
+    private FridayFragment fridayFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +53,14 @@ public class MainActivity extends AppCompatActivity {
         actionBar.setDisplayUseLogoEnabled(true);
         actionBar.setDisplayShowHomeEnabled(true);
 
+        mondayFragment = new MondayFragment();
+        tuesdayFragment = new TuesdayFragment();
+        wednesdayFragment = new WednesdayFragment();
+        thursdayFragment = new ThursdayFragment();
+        fridayFragment = new FridayFragment();
+        difficulty = new Difficulty();
+
+        setDay();
     }
 
     @Override
@@ -74,32 +91,81 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void changeFragment(View view){
-        Fragment fragment;
+        Fragment currentFragment;
 
         if (view == findViewById(R.id.MondayFragButton)){
-            fragment = new MondayFragment();
+            currentFragment = mondayFragment;
         }
         else if (view == findViewById(R.id.TuesdayFragButton)){
-            fragment = new TuesdayFragment();
+            currentFragment = tuesdayFragment;
         }
         else if (view == findViewById(R.id.WednesdayFragButton)){
-            fragment = new WednesdayFragment();
+            currentFragment = wednesdayFragment;
         }
         else if (view == findViewById(R.id.ThursdayFragButton)){
-            fragment = new ThursdayFragment();
+            currentFragment = thursdayFragment;
         }
         else if (view == findViewById(R.id.FridayFragButton)){
-            fragment = new FridayFragment();
+            currentFragment = fridayFragment;
+        }
+        else if (view == findViewById(R.id.DifficultyFragButton)) {
+            currentFragment = difficulty;
         }
         else {
-            fragment = new MondayFragment();
+            currentFragment = mondayFragment;
         }
 
-        FragmentManager fm = getSupportFragmentManager();
-        FragmentTransaction ft = fm.beginTransaction();
-        ft.replace(R.id.fragment_place, fragment);
-        ft.commit();
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.fragment_place, currentFragment)
+                .commit();
     }
 
+    @Override
+    public void onInputDifficulty(CharSequence input) {
+        Log.i("progress", "doing my " + input);
+        mondayFragment.updateTextView(input);
+    }
 
+    public void setDay(){
+        Calendar calendar = Calendar.getInstance();
+        int day = calendar.get(Calendar.DAY_OF_WEEK);
+
+        switch (day) {
+            case Calendar.TUESDAY:
+                getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.fragment_place, tuesdayFragment)
+                        .commit();
+                break;
+
+            case Calendar.WEDNESDAY:
+                getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.fragment_place, wednesdayFragment)
+                        .commit();
+                break;
+
+            case Calendar.THURSDAY:
+                getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.fragment_place, thursdayFragment)
+                        .commit();
+                break;
+
+            case Calendar.FRIDAY:
+                getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.fragment_place, fridayFragment)
+                        .commit();
+                break;
+            default:
+                getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.fragment_place, mondayFragment)
+                        .commit();
+                break;
+
+        }
+    }
 }
