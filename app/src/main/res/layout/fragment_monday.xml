@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MondayFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Monday: Back Workout" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Deadlift" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Lat Pull Down" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Dumbbell Row" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Hammer Strength Machine Row" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="One Arm Cable Row" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/beginnerbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="beginner"
+            tools:ignore="MissingConstraints" />
+        <Button
+            android:id="@+id/intermediatebtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="intermediate"
+            tools:ignore="MissingConstraints" />
+        <Button
+            android:id="@+id/hardbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="hard"
+            tools:ignore="MissingConstraints" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</LinearLayout>

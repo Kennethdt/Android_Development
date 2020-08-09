@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <include
+        layout="@layout/toolbar_layout"/>
+
+    <Button
+        android:id="@+id/tempbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="tempbtn"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/MondayFragButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="changeFragment"
+        android:text="Monday" />
+
+    <Button
+        android:id="@+id/TuesdayFragButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="changeFragment"
+        android:text="Tuesday" />
+
+    <Button
+        android:id="@+id/WednesdayFragButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="changeFragment"
+        android:text="Wednesday" />
+
+    <Button
+        android:id="@+id/ThursdayFragButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="changeFragment"
+        android:text="Thursday" />
+
+    <Button
+        android:id="@+id/FridayFragButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="changeFragment"
+        android:text="Friday" />
+
+    <fragment
+        android:name="com.example.android_development.MondayFragment"
+        android:id="@+id/fragment_place"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</LinearLayout>
