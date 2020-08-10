@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+    <!--
+    <include
+        android:id="@+id/include"
+        layout="@layout/toolbar_layout"
+        app:layout_constraintBottom_toTopOf="@+id/tempbtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    -->
+
+    <Button
+        android:id="@+id/startWorkout"
+        android:layout_width="186dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="376dp"
+        android:layout_marginLeft="376dp"
+        android:text="Start"
+        app:layout_constraintBottom_toTopOf="@+id/fragment_place"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        tools:ignore="MissingConstraints" />
+
+    <Chronometer
+        android:id="@+id/chronometer"
+        android:layout_width="177dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginLeft="1dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintBottom_toTopOf="@+id/fragment_place"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/startWorkout"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.964" />
+
+    <Button
+        android:id="@+id/DifficultyFragButton"
+        android:layout_width="365dp"
+        android:layout_height="55dp"
+        android:onClick="changeFragment"
+        android:text="Difficulty"
+        app:layout_constraintBottom_toTopOf="@+id/MondayFragButton"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/FridayFragButton"
+        android:layout_width="365dp"
+        android:layout_height="55dp"
+        android:onClick="changeFragment"
+        android:text="Friday"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/ThursdayFragButton"
+        android:layout_width="365dp"
+        android:layout_height="55dp"
+        android:onClick="changeFragment"
+        android:text="Thursday"
+        app:layout_constraintBottom_toTopOf="@+id/FridayFragButton"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/TuesdayFragButton"
+        android:layout_width="365dp"
+        android:layout_height="55dp"
+        android:onClick="changeFragment"
+        android:text="Tuesday"
+        app:layout_constraintBottom_toTopOf="@+id/WednesdayFragButton"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/WednesdayFragButton"
+        android:layout_width="365dp"
+        android:layout_height="55dp"
+        android:onClick="changeFragment"
+        android:text="Wednesday"
+        app:layout_constraintBottom_toTopOf="@+id/ThursdayFragButton"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/MondayFragButton"
+        android:layout_width="365dp"
+        android:layout_height="55dp"
+        android:onClick="changeFragment"
+        android:text="Monday"
+        app:layout_constraintBottom_toTopOf="@+id/TuesdayFragButton"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <FrameLayout
+        android:id="@+id/fragment_place"
+        android:name="com.example.android_development.MondayFragment"
+        android:layout_width="340dp"
+        android:layout_height="275dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.423"
+        app:layout_constraintStart_toEndOf="@+id/WednesdayFragButton"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
