@@ -17,15 +17,28 @@
     -->
 
     <Button
-        android:id="@+id/tempbtn"
+        android:id="@+id/startWorkout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="tempbtn"
+        android:text="Start"
         app:layout_constraintBottom_toTopOf="@+id/DifficultyFragButton"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="0dp" />
+
+    <Chronometer
+        android:id="@+id/chronometer"
+        android:layout_width="120dp"
+        android:layout_height="29dp"
+        android:layout_marginBottom="15dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintBottom_toTopOf="@+id/MondayFragButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.064"
+        app:layout_constraintStart_toEndOf="@+id/startWorkout"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/DifficultyFragButton"

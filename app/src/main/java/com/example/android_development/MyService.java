@@ -28,7 +28,7 @@ public class MyService extends Service {
                 0, notificationIntent, 0);
 
         Notification notification = new NotificationCompat.Builder(this, CHANNEL_ID)
-                .setContentTitle("Example Service")
+                .setContentTitle("Your workout is now taking place!")
                 .setContentText(input)
                 .setSmallIcon(R.drawable.ic_android)
                 .setContentIntent(pendingIntent)

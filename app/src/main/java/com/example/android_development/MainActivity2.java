@@ -4,11 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
 public class MainActivity2 extends AppCompatActivity {
-    private String example;
+    private int example;
     private EditText editTextInput;
 
     @Override
@@ -17,8 +18,10 @@ public class MainActivity2 extends AppCompatActivity {
         setContentView(R.layout.activity_main2);
 
         Intent i= getIntent();
-        example = i.getStringExtra("Value1");
-        getSupportActionBar().setTitle(example);
+        example = i.getIntExtra("TimeElapsed", 0);
+        Log.i(null,"result: " + example);
+
+        getSupportActionBar().setTitle("your time: " + example);
 
         editTextInput = findViewById(R.id.edit_text_example);
     }

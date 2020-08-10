@@ -1,26 +1,25 @@
 package com.example.android_development;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Chronometer;
 
 import java.util.Calendar;
+import java.util.Locale;
 
 
 public class MainActivity extends AppCompatActivity implements Difficulty.DifficultyFragmentListener {
-    Button tempbtn;
     private Difficulty difficulty;
     private MondayFragment mondayFragment;
     private TuesdayFragment tuesdayFragment;
@@ -28,30 +27,30 @@ public class MainActivity extends AppCompatActivity implements Difficulty.Diffic
     private ThursdayFragment thursdayFragment;
     private FridayFragment fridayFragment;
 
+    private Button chrono;
+    private Chronometer chronometer;
+    private boolean isStart;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        tempbtn = findViewById(R.id.tempbtn);
+        chrono = findViewById(R.id.startWorkout);
 
-        tempbtn.setOnClickListener(new View.OnClickListener(){
+        chrono.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(MainActivity.this, MainActivity2.class);
-
-                i.putExtra("Value1", "This value one for ActivityTwo ");
-                i.putExtra("Value2", "This value two ActivityTwo");
-
-                startActivity(i);
+                startStopChronometer(view);
             }
         });
 
-
+        /*
         ActionBar actionBar = getSupportActionBar();
         actionBar.setLogo(R.drawable.ic_android);
         actionBar.setDisplayUseLogoEnabled(true);
         actionBar.setDisplayShowHomeEnabled(true);
+        */
 
         mondayFragment = new MondayFragment();
         tuesdayFragment = new TuesdayFragment();
@@ -61,6 +60,57 @@ public class MainActivity extends AppCompatActivity implements Difficulty.Diffic
         difficulty = new Difficulty();
 
         setDay();
+
+
+        chronometer = findViewById(R.id.chronometer);
+
+        chronometer.setOnChronometerTickListener(new Chronometer.OnChronometerTickListener() {
+            @Override
+            public void onChronometerTick(Chronometer chronometerChanged) {
+                chronometer = chronometerChanged;
+            }
+        });
+    }
+
+    public void startStopChronometer(View view){
+        if(isStart){
+            chronometer.stop();
+            long time = SystemClock.elapsedRealtime() - chronometer.getBase();
+            changeActivity((int)time);
+            isStart = false;
+            stopService(view);
+            ((Button)view).setText("Start");
+        }else{
+            chronometer.setBase(SystemClock.elapsedRealtime());
+            chronometer.start();
+            isStart = true;
+            startService(view);
+            ((Button)view).setText("Stop");
+        }
+    }
+
+    public void changeActivity(int timeElapsed){
+        Intent i = new Intent(MainActivity.this, MainActivity2.class);
+
+        i.putExtra("TimeElapsed", timeElapsed );
+
+        startActivity(i);
+    }
+
+    public void startService(View view){
+        Calendar calendar = Calendar.getInstance();
+        String dayLongName = calendar.getDisplayName(Calendar.DAY_OF_WEEK, Calendar.LONG, Locale.getDefault());
+
+        Intent serviceIntent = new Intent(this, MyService.class);
+        serviceIntent.putExtra("inputExtra", dayLongName + " workout");
+
+        startService(serviceIntent);
+    }
+
+    public void stopService(View view){
+        Intent serviceIntent = new Intent(this, MyService.class);
+
+        stopService(serviceIntent);
     }
 
     @Override
@@ -75,8 +125,8 @@ public class MainActivity extends AppCompatActivity implements Difficulty.Diffic
         Intent i;
         switch (item.getItemId()){
             case R.id.schedule:
-                i = new Intent(MainActivity.this, MainActivity.class);
-                startActivity(i);
+                //i = new Intent(MainActivity.this, MainActivity.class);
+                //startActivity(i);
                 break;
             case R.id.overview:
                 i = new Intent(MainActivity.this, MainActivity2.class);
