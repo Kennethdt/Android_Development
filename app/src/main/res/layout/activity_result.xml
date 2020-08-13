@@ -5,24 +5,22 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity2">
-    
-    <EditText
-        android:id="@+id/edit_text_example"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Input"/>
-    
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Start Service"
-        android:onClick="startService"/>
+    tools:context=".ResultActivity">
 
-    <Button
+    <TextView
+        android:id="@+id/current_day_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Stop Service"
-        android:onClick="stopService"/>
+        android:text="Current Day" />
+    <TextView
+        android:id="@+id/times_completed_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Times Completed" />
+    <TextView
+        android:id="@+id/time_spend_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Time Spend" />
 
 </LinearLayout>

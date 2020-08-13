@@ -17,7 +17,12 @@ public interface WorkoutDao {
     @Query("SELECT * FROM workouts")
     List<Workout> getAllWorkouts();
 
-    @Query("SELECT DISTINCT dayOfWeek, COUNT(dayOfWeek) ,SUM(timeSpend) FROM workouts WHERE dayOfWeek LIKE :day")
+    @Query("SELECT DISTINCT " +
+            "dayOfWeek, " +
+            "COUNT(dayOfWeek) AS timesCompleted ," +
+            "SUM(timeSpend) AS totalTimeSpend " +
+            "FROM workouts " +
+            "WHERE dayOfWeek LIKE :day")
     WorkoutData getWorkoutDataByDay(String day);
 
     @Query("UPDATE workouts SET timeSpend = :ts WHERE dayOfWeek LIKE :day")
