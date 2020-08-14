@@ -23,4 +23,10 @@
         android:layout_height="wrap_content"
         android:text="Time Spend" />
 
+    <TextView
+        android:id="@+id/quote_of_the_day"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Quote Of The Day" />
+
 </LinearLayout>

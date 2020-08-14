@@ -62,13 +62,6 @@ public class MainActivity extends AppCompatActivity implements Difficulty.Diffic
                         Calendar.LONG,
                         Locale.getDefault());
 
-        /*
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setLogo(R.drawable.ic_android);
-        actionBar.setDisplayUseLogoEnabled(true);
-        actionBar.setDisplayShowHomeEnabled(true);
-        */
-
         this.mondayFragment = new MondayFragment();
         this.tuesdayFragment = new TuesdayFragment();
         this.wednesdayFragment = new WednesdayFragment();

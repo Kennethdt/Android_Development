@@ -2,15 +2,19 @@ package com.example.android_development.database;
 
 import android.app.Application;
 import android.os.AsyncTask;
+import android.util.Log;
 
 import com.example.android_development.daos.WorkoutDao;
 import com.example.android_development.entities.Workout;
 import com.example.android_development.entities.WorkoutData;
+import com.example.android_development.httprequest.HttpGetRequest;
 
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 
 public class AppRepository {
+    private final String URL = "https://quotes.rest/qod?language=en";
+
     private WorkoutDao mWorkoutDao;
 
     public AppRepository(Application application){
@@ -50,14 +54,28 @@ public class AppRepository {
         return workoutData;
     }
 
-    void updateWorkoutByDay(String day, int ts){
+    public void updateWorkoutByDay(String day, int ts){
         new updateWorkoutByDay(this.mWorkoutDao, ts).execute(day);
     }
 
+    // API
+    public String getQuote() {
+        String result = "";
+        HttpGetRequest getRequest = new HttpGetRequest();
 
-    //Async Methods
+        try {
+            result = getRequest.execute(this.URL).get();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return result;
+    }
 
-    //insert Workout
+    // Async Methods
+
+    // insert Workout
     private static class insertWorkoutAsync extends AsyncTask<Workout, Void, Void> {
         private WorkoutDao workoutDao;
 
@@ -72,7 +90,7 @@ public class AppRepository {
         }
     }
 
-    //get all Workouts
+    // get all Workouts
     private static class getAllWorkoutsAsync extends AsyncTask<Void, Void, List<Workout>> {
         private WorkoutDao workoutDao;
 
@@ -86,7 +104,7 @@ public class AppRepository {
         }
     }
 
-    //get WorkoutData by Day
+    // get WorkoutData by Day
     private static class getWorkoutDataByDayAsync extends AsyncTask<String, Void, WorkoutData> {
         private WorkoutDao workoutDao;
 
@@ -100,7 +118,7 @@ public class AppRepository {
         }
     }
 
-    //update Workout by day
+    // update Workout by day
     private static class updateWorkoutByDay extends AsyncTask<String, Void, Void> {
         private WorkoutDao workoutDao;
         private int ts;
