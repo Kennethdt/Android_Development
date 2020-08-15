@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/broken_black">
+
+    <TextView
+        android:id="@+id/current_day_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Current Day"
+        android:textAlignment="center"
+        android:layout_gravity="center_horizontal"
+        android:textSize="24sp"
+        android:textColor="@android:color/holo_blue_dark"
+        android:layout_margin="5dp"/>
+    <TextView
+        android:id="@+id/times_completed_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Times Completed"
+        android:textSize="20sp"
+        android:textColor="@color/light_grey"
+        android:layout_margin="5dp"/>
+    <TextView
+        android:id="@+id/time_spend_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Time Spend"
+        android:textSize="20sp"
+        android:textColor="@color/light_grey"
+        android:layout_margin="5dp"/>
+
+</LinearLayout>

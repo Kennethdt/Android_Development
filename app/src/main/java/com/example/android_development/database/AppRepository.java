@@ -70,6 +70,7 @@ public class AppRepository {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+        Log.i("result","test" + result);
         return result;
     }
 

@@ -3,4 +3,11 @@
     <color name="colorPrimary">#6200EE</color>
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
+
+    <color name="light_grey">#a6a6a6</color>
+    <color name="broken_black">#2a2a2a</color>
+    <color name="neon_blue">#00c8c3</color>
+    <color name="grey">#6c6c6c</color>
+    <color name="action_bar">#008bce</color>
+    <color name="notification_bar">#2a5270</color>
 </resources>

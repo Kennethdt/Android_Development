@@ -5,27 +5,27 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
-    <!--
-    <include
-        android:id="@+id/include"
-        layout="@layout/toolbar_layout"
-        app:layout_constraintBottom_toTopOf="@+id/tempbtn"
+    tools:context=".MainActivity"
+    android:background="@color/broken_black">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="413dp"
+        android:layout_height="72dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-    -->
 
     <Button
         android:id="@+id/startWorkout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="118dp"
+        android:layout_height="51dp"
         android:text="Start"
         app:layout_constraintBottom_toTopOf="@+id/DifficultyFragButton"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
         app:layout_constraintVertical_bias="1.0"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="0dp" />
+        tools:layout_editor_absoluteX="-9dp" />
 
     <Chronometer
         android:id="@+id/chronometer"
@@ -33,17 +33,22 @@
         android:layout_height="29dp"
         android:layout_marginBottom="15dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/MondayFragButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.064"
         app:layout_constraintStart_toEndOf="@+id/startWorkout"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
         app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/DifficultyFragButton"
         android:layout_width="200dp"
         android:layout_height="50dp"
+        android:layout_marginBottom="8dp"
+        android:background="@color/light_grey"
         android:onClick="changeFragment"
         android:text="Difficulty"
         app:layout_constraintBottom_toTopOf="@+id/TuesdayFragButton"
@@ -53,6 +58,8 @@
         android:id="@+id/MondayFragButton"
         android:layout_width="200dp"
         android:layout_height="50dp"
+        android:layout_marginBottom="8dp"
+        android:background="@color/neon_blue"
         android:onClick="changeFragment"
         android:text="Monday"
         app:layout_constraintBottom_toTopOf="@+id/WednesdayFragButton"
@@ -62,6 +69,8 @@
         android:id="@+id/TuesdayFragButton"
         android:layout_width="200dp"
         android:layout_height="50dp"
+        android:layout_marginBottom="8dp"
+        android:background="@color/neon_blue"
         android:onClick="changeFragment"
         android:text="Tuesday"
         app:layout_constraintBottom_toTopOf="@+id/ThursdayFragButton"
@@ -71,6 +80,8 @@
         android:id="@+id/WednesdayFragButton"
         android:layout_width="200dp"
         android:layout_height="50dp"
+        android:layout_marginBottom="8dp"
+        android:background="@color/neon_blue"
         android:onClick="changeFragment"
         android:text="Wednesday"
         app:layout_constraintBottom_toTopOf="@+id/FridayFragButton"
@@ -80,6 +91,8 @@
         android:id="@+id/ThursdayFragButton"
         android:layout_width="200dp"
         android:layout_height="50dp"
+        android:layout_marginBottom="16dp"
+        android:background="@color/neon_blue"
         android:onClick="changeFragment"
         android:text="Thursday"
         app:layout_constraintBottom_toTopOf="@+id/fragment_place"
@@ -89,6 +102,8 @@
         android:id="@+id/FridayFragButton"
         android:layout_width="200dp"
         android:layout_height="50dp"
+        android:layout_marginBottom="16dp"
+        android:background="@color/neon_blue"
         android:onClick="changeFragment"
         android:text="Friday"
         app:layout_constraintBottom_toTopOf="@+id/fragment_place"
@@ -97,10 +112,12 @@
     <FrameLayout
         android:id="@+id/fragment_place"
         android:name="com.example.android_development.MondayFragment"
-        android:layout_width="409dp"
-        android:layout_height="407dp"
+        android:layout_width="387dp"
+        android:layout_height="353dp"
+        android:layout_marginBottom="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.428"
         app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.constraintlayout.widget.Guideline

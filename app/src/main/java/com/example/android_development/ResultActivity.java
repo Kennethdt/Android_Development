@@ -3,7 +3,10 @@ package com.example.android_development;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -28,6 +31,8 @@ public class ResultActivity extends AppCompatActivity {
     private TextView timeSpendText;
     private TextView quoteOfTheDay;
 
+    private String qotd;
+
     private int timeSpend;
     private String currentDay;
 
@@ -38,28 +43,43 @@ public class ResultActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_result);
 
         this.mRepository = new AppRepository(getApplication());
+
+        if (checkInternetConnection()){
+            qotd = getQuoteOfTheDay();
+            if (!qotd.equals("")){
+                setContentView(R.layout.activity_result);
+
+                this.quoteOfTheDay = findViewById(R.id.quote_of_the_day);
+                this.quoteOfTheDay.setText(getQuoteOfTheDay());
+            }
+            else{
+                setContentView(R.layout.activity_result_no_internet);
+            }
+        }
+        else {
+            setContentView(R.layout.activity_result_no_internet);
+        }
 
         Intent i= getIntent();
         this.timeSpend = i.getIntExtra("TimeElapsed", 0);
         this.currentDay = i.getStringExtra("CurrentDay");
 
         this.workoutData = this.mRepository.getWorkoutByDay(currentDay);
-        Log.i("Workout Data", workoutData.dayOfWeek);
-        Log.i("Workout Data", "" + this.workoutData.timesCompleted);
-        Log.i("Workout Data", "" + this.workoutData.totalTimeSpend);
+        //Log.i("Workout Data", workoutData.dayOfWeek);
+        //Log.i("Workout Data", "" + this.workoutData.timesCompleted);
+        //Log.i("Workout Data", "" + this.workoutData.totalTimeSpend);
 
         this.currentDayText = findViewById(R.id.current_day_text);
         this.timesCompletedText = findViewById(R.id.times_completed_text);
         this.timeSpendText = findViewById(R.id.time_spend_text);
-        this.quoteOfTheDay = findViewById(R.id.quote_of_the_day);
+
 
         this.currentDayText.setText("Your " + this.currentDay + " Workout:");
         this.timesCompletedText.setText("Has been Completed " + this.workoutData.timesCompleted + " times");
         this.timeSpendText.setText("For a total of " + this.workoutData.totalTimeSpend/1000 + " seconds");
-        this.quoteOfTheDay.setText(getQuoteOfTheDay());
+
 
         getSupportActionBar().setTitle("your time: " + timeSpend);
     }
@@ -68,6 +88,8 @@ public class ResultActivity extends AppCompatActivity {
         String QOTD = "";
         String result = mRepository.getQuote();
 
+        if (result == null)
+            return "";
 
         try {
             JSONObject jsonObject = new JSONObject(result);
@@ -79,5 +101,15 @@ public class ResultActivity extends AppCompatActivity {
         }
 
         return QOTD;
+    }
+
+    public boolean checkInternetConnection() {
+        boolean connected = false;
+
+        ConnectivityManager connectivityManager = (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
+        connected = connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).getState() == NetworkInfo.State.CONNECTED ||
+                connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI).getState() == NetworkInfo.State.CONNECTED;
+
+        return connected;
     }
 }
