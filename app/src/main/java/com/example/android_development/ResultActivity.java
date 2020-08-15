@@ -76,12 +76,24 @@ public class ResultActivity extends AppCompatActivity {
         this.timeSpendText = findViewById(R.id.time_spend_text);
 
 
-        this.currentDayText.setText("Your " + this.currentDay + " Workout:");
-        this.timesCompletedText.setText("Has been Completed " + this.workoutData.timesCompleted + " times");
-        this.timeSpendText.setText("For a total of " + this.workoutData.totalTimeSpend/1000 + " seconds");
+        this.currentDayText.setText(
+                String.format(
+                        getString(R.string.workout_day),
+                        this.currentDay));
+        this.timesCompletedText.setText(
+                String.format(
+                        getString(R.string.nr_times_completed),
+                        this.workoutData.timesCompleted));
+        this.timeSpendText.setText(
+                String.format(
+                        getString(R.string.total_time),
+                        this.workoutData.totalTimeSpend / 1000));
 
 
-        getSupportActionBar().setTitle("your time: " + timeSpend);
+        getSupportActionBar().setTitle(
+                String.format(
+                    getString(R.string.cleared_in),
+                    timeSpend));
     }
 
     public String getQuoteOfTheDay() {

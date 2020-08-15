@@ -20,7 +20,7 @@
         android:id="@+id/startWorkout"
         android:layout_width="118dp"
         android:layout_height="51dp"
-        android:text="Start"
+        android:text="@string/start"
         app:layout_constraintBottom_toTopOf="@+id/DifficultyFragButton"
         app:layout_constraintTop_toBottomOf="@+id/toolbar"
         app:layout_constraintVertical_bias="1.0"
@@ -50,7 +50,7 @@
         android:layout_marginBottom="8dp"
         android:background="@color/light_grey"
         android:onClick="changeFragment"
-        android:text="Difficulty"
+        android:text="@string/difficulty"
         app:layout_constraintBottom_toTopOf="@+id/TuesdayFragButton"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -61,7 +61,7 @@
         android:layout_marginBottom="8dp"
         android:background="@color/neon_blue"
         android:onClick="changeFragment"
-        android:text="Monday"
+        android:text="@string/monday"
         app:layout_constraintBottom_toTopOf="@+id/WednesdayFragButton"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -72,7 +72,7 @@
         android:layout_marginBottom="8dp"
         android:background="@color/neon_blue"
         android:onClick="changeFragment"
-        android:text="Tuesday"
+        android:text="@string/tuesday"
         app:layout_constraintBottom_toTopOf="@+id/ThursdayFragButton"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -83,7 +83,7 @@
         android:layout_marginBottom="8dp"
         android:background="@color/neon_blue"
         android:onClick="changeFragment"
-        android:text="Wednesday"
+        android:text="@string/wednesday"
         app:layout_constraintBottom_toTopOf="@+id/FridayFragButton"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -94,7 +94,7 @@
         android:layout_marginBottom="16dp"
         android:background="@color/neon_blue"
         android:onClick="changeFragment"
-        android:text="Thursday"
+        android:text="@string/thursday"
         app:layout_constraintBottom_toTopOf="@+id/fragment_place"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -105,7 +105,7 @@
         android:layout_marginBottom="16dp"
         android:background="@color/neon_blue"
         android:onClick="changeFragment"
-        android:text="Friday"
+        android:text="@string/friday"
         app:layout_constraintBottom_toTopOf="@+id/fragment_place"
         app:layout_constraintEnd_toEndOf="parent" />
 

@@ -13,7 +13,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Monday: Back Workout"
+        android:text="@string/monday_back_workout"
         android:textColor="@android:color/holo_blue_dark"
         android:textSize="22sp"/>
 
@@ -28,7 +28,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
-            android:text="Deadlift"
+            android:text="@string/deadlift"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -37,7 +37,7 @@
             android:id="@+id/dlrep"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="10 reps"
+            android:text="@string/_10_reps"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -54,7 +54,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
-            android:text="Lat Pull Down"
+            android:text="@string/lat_pull_down"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -63,7 +63,7 @@
             android:id="@+id/lpdrep"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="10 reps"
+            android:text="@string/_10_reps"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -81,7 +81,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
-            android:text="Dumbbell Row"
+            android:text="@string/dumbbell_row"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -90,7 +90,7 @@
             android:id="@+id/drrep"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="10 reps"
+            android:text="@string/_10_reps"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -109,7 +109,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
-            android:text="Hammer Strength Machine Row"
+            android:text="@string/hammer_strength_machine_row"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -118,7 +118,7 @@
             android:id="@+id/hsmrrep"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="10 reps"
+            android:text="@string/_10_reps"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -135,7 +135,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
-            android:text="One Arm Cable Row"
+            android:text="@string/one_arm_cable_row"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -144,7 +144,7 @@
             android:id="@+id/oacrrep"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="10 reps"
+            android:text="@string/_10_reps"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

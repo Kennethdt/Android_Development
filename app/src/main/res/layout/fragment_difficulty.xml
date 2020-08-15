@@ -13,7 +13,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Select your difficulty"
+        android:text="@string/select_your_difficulty"
         android:textColor="@android:color/holo_blue_dark"
         android:textSize="22sp"/>
 
@@ -27,17 +27,17 @@
             android:id="@+id/btn_beginner"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="beginner" />
+            android:text="@string/beginner" />
         <Button
             android:id="@+id/btn_intermediate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="intermediate" />
+            android:text="@string/intermediate" />
         <Button
             android:id="@+id/btn_hard"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="hard" />
+            android:text="@string/hard" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 

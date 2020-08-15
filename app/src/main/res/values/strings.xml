@@ -1,7 +1,66 @@
 <resources>
-    <string name="app_name">Android_Development</string>
-    <!-- TODO: Remove or change this placeholder text -->
+    <string name="app_name">MAN-Droid</string>
 
+    <string name="current_day">Current Day</string>
+    <string name="times_completed">Times Completed</string>
+    <string name="time_spend">Time Spend</string>
 
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="quote_of_the_day">Quote Of The Day</string>
+
+    <string name="select_your_difficulty">Select your difficulty</string>
+    <string name="beginner">beginner</string>
+    <string name="intermediate">intermediate</string>
+    <string name="hard">hard</string>
+
+    <string name="difficulty">Difficulty</string>
+    <string name="monday">Monday</string>
+    <string name="tuesday">Tuesday</string>
+    <string name="wednesday">Wednesday</string>
+    <string name="thursday">Thursday</string>
+    <string name="friday">Friday</string>
+
+    <string name="start">Start</string>
+    <string name="monday_back_workout">Monday: Back Workout</string>
+    <string name="deadlift">Deadlift</string>
+    <string name="_10_reps">10 reps</string>
+    <string name="lat_pull_down">Lat Pull Down</string>
+    <string name="one_arm_cable_row">One Arm Cable Row</string>
+    <string name="hammer_strength_machine_row">Hammer Strength Machine Row</string>
+    <string name="dumbbell_row">Dumbbell Row</string>
+
+    <string name="tuesday_chest_and_abs_workout">Tuesday: Chest and Abs Workout</string>
+    <string name="incline_bench_press">Incline Bench Press</string>
+    <string name="decline_bench_press">Decline Bench Press</string>
+    <string name="machine_bench_press">Machine Bench Press</string>
+    <string name="machine_fly">Machine Fly</string>
+    <string name="push_ups">Push Ups</string>
+
+    <string name="wednesday_legs_workout">Wednesday: Legs Workout</string>
+    <string name="barbell_back_squat">Barbell Back Squat</string>
+    <string name="romanian_deadlift">Romanian Deadlift</string>
+    <string name="leg_press">Leg Press</string>
+    <string name="leg_curl">Leg Curl</string>
+    <string name="walking_lunge">Walking Lunge</string>
+
+    <string name="thursday_shoulders_and_abs_workout">Thursday: Shoulders and Abs Workout</string>
+    <string name="military_press">Military Press</string>
+    <string name="lateral_raise">Lateral Raise</string>
+    <string name="reverse_machine_fly">Reverse Machine Fly</string>
+    <string name="barbell_shrugs">BarBell Shrugs</string>
+    <string name="decline_sit_up">Decline Sit Up</string>
+
+    <string name="friday_arms_workout">Friday: Arms Workout</string>
+    <string name="spider_curl">Spider Curl</string>
+    <string name="tricep_curl">Tricep Curl</string>
+    <string name="ez_bar_curl">EZ Bar Curl</string>
+    <string name="cable_hammer_curl">Cable Hammer Curl</string>
+    <string name="french_press">French Press</string>
+
+    <string name="schedule">schedule</string>
+    <string name="stats">Stats</string>
+
+    <string name="total_time">For a total of %d seconds</string>
+    <string name="nr_times_completed">Has been Completed %d times</string>
+    <string name="workout_day">Your %s Workout:</string>
+    <string name="cleared_in">"Workout Cleared in: %d seconds</string>
 </resources>

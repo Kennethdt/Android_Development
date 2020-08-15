@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MAN-Droid</string>
+
+    <string name="current_day">Huidige dag</string>
+    <string name="times_completed">Aantal keren voltooid</string>
+    <string name="time_spend">Tijd gespendeerd</string>
+
+    <string name="quote_of_the_day">Quote Van De Dag</string>
+
+    <string name="select_your_difficulty">Kies uw moeilijkheidsgraad</string>
+    <string name="beginner">Beginner</string>
+    <string name="intermediate">Gemiddeld</string>
+    <string name="hard">Gevorderd</string>
+
+    <string name="difficulty">Moeilijkheidsgraad</string>
+    <string name="monday">Maandag</string>
+    <string name="tuesday">Dinsdag</string>
+    <string name="wednesday">Woensdag</string>
+    <string name="thursday">Donderdag</string>
+    <string name="friday">Vrijdag</string>
+
+    <string name="_10_reps">10 Keer</string>
+
+    <string name="start">Begin</string>
+    <string name="monday_back_workout">Maandag: Rug</string>
+    <string name="deadlift">Deadlift</string>
+    <string name="lat_pull_down">Laterale Pull Down</string>
+    <string name="one_arm_cable_row">Eén Arm Cable Roeien</string>
+    <string name="hammer_strength_machine_row">Hammer Strength Machine Roeien</string>
+    <string name="dumbbell_row">Dumbbell Roeien</string>
+
+    <string name="tuesday_chest_and_abs_workout">Dinsdag: Borst- en Buikspieren</string>
+    <string name="incline_bench_press">Hellings Bench Press</string>
+    <string name="decline_bench_press">Vervals Bench Press</string>
+    <string name="machine_bench_press">Machinale Bench Press</string>
+    <string name="machine_fly">Machinale Bench Fly</string>
+    <string name="push_ups">Push Ups</string>
+
+    <string name="wednesday_legs_workout">Woensdag: Benen</string>
+    <string name="barbell_back_squat">Barbell Back Squat</string>
+    <string name="romanian_deadlift">Romanian Deadlift</string>
+    <string name="leg_press">Been Press</string>
+    <string name="leg_curl">Been Curl</string>
+    <string name="walking_lunge">Walking Lunge</string>
+
+    <string name="thursday_shoulders_and_abs_workout">Donderdag: Schouders en Buispieren</string>
+    <string name="military_press">Military Press</string>
+    <string name="lateral_raise">Lateral Raise</string>
+    <string name="reverse_machine_fly">Omgekeerde Machine Fly</string>
+    <string name="barbell_shrugs">BarBell Shrugs</string>
+    <string name="decline_sit_up">Verval Sit Up</string>
+
+    <string name="friday_arms_workout">Friday: Arms Workout</string>
+    <string name="spider_curl">Spider Curl</string>
+    <string name="tricep_curl">Tricep Curl</string>
+    <string name="ez_bar_curl">EZ Bar Curl</string>
+    <string name="cable_hammer_curl">Cable Hammer Curl</string>
+    <string name="french_press">French Press</string>
+
+    <string name="schedule">Schema</string>
+    <string name="stats">Statistieken</string>
+    <string name="total_time">Voor een totaal van %d seconden.</string>
+    <string name="nr_times_completed">Is %d keren voltooid.</string>
+    <string name="workout_day">Jouw %s training:</string>
+    <string name="cleared_in">Training voltooid in: %d seconden</string>
+</resources>

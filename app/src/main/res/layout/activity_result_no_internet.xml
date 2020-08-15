@@ -9,7 +9,7 @@
         android:id="@+id/current_day_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Current Day"
+        android:text="@string/current_day"
         android:textAlignment="center"
         android:layout_gravity="center_horizontal"
         android:textSize="24sp"
@@ -19,7 +19,7 @@
         android:id="@+id/times_completed_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Times Completed"
+        android:text="@string/times_completed"
         android:textSize="20sp"
         android:textColor="@color/light_grey"
         android:layout_margin="5dp"/>
@@ -27,7 +27,7 @@
         android:id="@+id/time_spend_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Time Spend"
+        android:text="@string/time_spend"
         android:textSize="20sp"
         android:textColor="@color/light_grey"
         android:layout_margin="5dp"/>

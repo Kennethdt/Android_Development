@@ -33,10 +33,7 @@ public class MondayFragment extends Fragment {
     }
 
     public void updateTextView(CharSequence NOR){
-        Log.i("done", "finished my " + NOR);
-        Log.i("exercise", dlrep.getText().toString());
         dlrep.setText(NOR);
-        Log.i("exercise", dlrep.getText().toString());
         lpdrep.setText(NOR.toString());
         drrep.setText(NOR.toString());
         hsmrrep.setText(NOR.toString());
