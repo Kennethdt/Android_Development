@@ -2,6 +2,8 @@
 <resources>
     <string name="app_name">MAN-Droid</string>
 
+    <string name="difficulty_option">com.example.android_development.difficulty_option</string>
+
     <string name="current_day">Huidige dag</string>
     <string name="times_completed">Aantal keren voltooid</string>
     <string name="time_spend">Tijd gespendeerd</string>
@@ -21,8 +23,12 @@
     <string name="friday">Vrijdag</string>
 
     <string name="_10_reps">10 Keer</string>
+    <string name="_30_reps">30 Keer</string>
+    <string name="_1000_reps">1000 Keer</string>
 
     <string name="start">Begin</string>
+    <string name="stop">Beëindigen</string>
+
     <string name="monday_back_workout">Maandag: Rug</string>
     <string name="deadlift">Deadlift</string>
     <string name="lat_pull_down">Laterale Pull Down</string>
@@ -64,4 +70,6 @@
     <string name="nr_times_completed">Is %d keren voltooid.</string>
     <string name="workout_day">Jouw %s training:</string>
     <string name="cleared_in">Training voltooid in: %d seconden</string>
+
+
 </resources>

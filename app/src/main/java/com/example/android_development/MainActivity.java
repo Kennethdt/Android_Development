@@ -4,9 +4,12 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.SystemClock;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -17,12 +20,20 @@ import android.widget.Chronometer;
 
 import com.example.android_development.database.AppRepository;
 import com.example.android_development.entities.Workout;
+import com.example.android_development.fragments.Difficulty;
+import com.example.android_development.fragments.FridayFragment;
+import com.example.android_development.fragments.MondayFragment;
+import com.example.android_development.fragments.ThursdayFragment;
+import com.example.android_development.fragments.TuesdayFragment;
+import com.example.android_development.fragments.WednesdayFragment;
 
 import java.util.Calendar;
 import java.util.Locale;
 
 
-public class MainActivity extends AppCompatActivity implements Difficulty.DifficultyFragmentListener {
+public class MainActivity extends AppCompatActivity
+        //implements Difficulty.DifficultyFragmentListener
+{
     private Difficulty difficulty;
     private MondayFragment mondayFragment;
     private TuesdayFragment tuesdayFragment;
@@ -71,7 +82,6 @@ public class MainActivity extends AppCompatActivity implements Difficulty.Diffic
 
         setDay();
 
-
         this.chronometer = findViewById(R.id.chronometer);
 
         this.chronometer.setOnChronometerTickListener(new Chronometer.OnChronometerTickListener() {
@@ -80,6 +90,8 @@ public class MainActivity extends AppCompatActivity implements Difficulty.Diffic
                 chronometer = chronometerChanged;
             }
         });
+
+
     }
 
     public void startStopChronometer(View view){
@@ -90,13 +102,13 @@ public class MainActivity extends AppCompatActivity implements Difficulty.Diffic
             changeActivity((int)time);
             this.isStart = false;
             stopService(view);
-            ((Button)view).setText("Start");
+            ((Button)view).setText(getString(R.string.start));
         }else{
             this.chronometer.setBase(SystemClock.elapsedRealtime());
             this.chronometer.start();
             this.isStart = true;
             startService(view);
-            ((Button)view).setText("Stop");
+            ((Button)view).setText(R.string.stop);
         }
     }
 
@@ -140,11 +152,8 @@ public class MainActivity extends AppCompatActivity implements Difficulty.Diffic
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        Intent i;
         switch (item.getItemId()){
             case R.id.schedule:
-                //i = new Intent(MainActivity.this, MainActivity.class);
-                //startActivity(i);
                 break;
             case R.id.overview:
                 changeActivity(0);
@@ -184,11 +193,12 @@ public class MainActivity extends AppCompatActivity implements Difficulty.Diffic
                 .commit();
     }
 
-    @Override
+   /* @Override
     public void onInputDifficulty(CharSequence input) {
         Log.i("progress", "doing my " + input);
+
         mondayFragment.updateTextView(input);
-    }
+    }*/
 
     public void setDay(){
         int day = calendar.get(Calendar.DAY_OF_WEEK);

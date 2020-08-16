@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">MAN-Droid</string>
 
+    <string name="difficulty_option">com.example.android_development.difficulty_option</string>
+
     <string name="current_day">Current Day</string>
     <string name="times_completed">Times Completed</string>
     <string name="time_spend">Time Spend</string>
@@ -63,4 +65,7 @@
     <string name="nr_times_completed">Has been Completed %d times</string>
     <string name="workout_day">Your %s Workout:</string>
     <string name="cleared_in">"Workout Cleared in: %d seconds</string>
+    <string name="stop">Stop</string>
+    <string name="_30_reps">30 reps</string>
+    <string name="_1000_reps">1000 reps</string>
 </resources>

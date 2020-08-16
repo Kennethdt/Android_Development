@@ -5,7 +5,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FridayFragment"
+    tools:context=".fragments.FridayFragment"
     android:padding="16dp"
     android:gravity="center_horizontal"
     android:background="@color/grey">
@@ -34,7 +34,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/dlrep"
+            android:id="@+id/ex_one_rep"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/_10_reps"
@@ -60,7 +60,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/lpdrep"
+            android:id="@+id/ex_two_rep"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/_10_reps"
@@ -87,7 +87,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/drrep"
+            android:id="@+id/ex_three_rep"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/_10_reps"
@@ -115,7 +115,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/hsmrrep"
+            android:id="@+id/ex_four_rep"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/_10_reps"
@@ -141,7 +141,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/oacrrep"
+            android:id="@+id/ex_five_rep"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/_10_reps"
